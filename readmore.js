@@ -148,6 +148,10 @@
       $('.readmore-js-section').each(function() {
         var current = $(this);
 
+        if(current.height() === 0) {
+          current.height($($this.element).data('max-height') || 60);
+        }
+
         $this.setBoxHeight(current);
 
         if(current.height() > current.data('expandedHeight') || (current.hasClass($this.options.expandedClass) && current.height() < current.data('expandedHeight')) ) {
